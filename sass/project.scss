@@ -1,0 +1,42 @@
+// 1. import mixins and variables
+	@import "mixin/css3";
+	@import "mixin/grid";
+	@import "mixin/responsive";
+	@import "mixin/utilities";
+
+	@import "variable";
+
+	@font-face {
+	  font-family: 'Krinkes';
+	  src: url('/fonts/krinkes.ttf') format('truetype');
+	}
+
+	.header-logo {
+	  font-family: 'Krinkes', arial, sans-serif;
+	  font-size: 40px;
+	  -webkit-font-smoothing: antialiased;
+	}
+
+	.footer p {
+		font-size:10px;
+	}
+
+	.tab-nav i {
+		padding-right: 5px;
+	}
+
+	.blink {
+      animation: blink 1s steps(5, start) infinite;
+      -webkit-animation: blink 1s steps(5, start) infinite;
+    }
+    @keyframes blink {
+      to {
+        visibility: hidden;
+      }
+    }
+    @-webkit-keyframes blink {
+      to {
+        visibility: hidden;
+      }
+    }
+

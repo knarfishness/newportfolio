@@ -1,0 +1,66 @@
+
+/*big menu*/
+
+#kwick {
+	margin-top: 0px;
+	padding-top: 0px;
+	background-color:688791;
+	width:805px;
+	overflow:hidden;
+}
+
+#kwick .kwicks {
+	display: block;
+	height: 65px;
+	margin: 0px;
+}
+
+#kwick li {
+	float: left;
+}
+
+#kwick .kwick {
+	display: block;
+	cursor: pointer;
+	overflow: hidden;
+	height: 65px;
+	width: 132px;
+	background: #000000;
+	/*border-right: 5px solid #202020;*/
+
+}
+
+#kwick .kwick span {
+	display: none;
+}
+
+#kwick .opt1 {
+	background: #000000 url(../site_files/images/menu_01.jpg);
+	border-right: 2px solid #fff;
+}
+#kwick .opt2 {
+	background: #000000 url(../site_files/images/menu_02.jpg);
+	border-right: 2px solid #fff;
+}
+
+#kwick .opt3 {
+	background: #000000 url(../site_files/images/menu_03.jpg);
+	border-right: 2px solid #fff;
+}
+
+#kwick .opt4 {
+	background: #000000 url(../site_files/images/menu_04.jpg);
+	border-right: 2px solid #fff;
+}
+
+#kwick .opt5 {
+	background: #000000 url(../site_files/images/menu_05.jpg);
+	border-right: 2px solid #fff;
+}
+
+#kwick .opt6 {
+	background: #000000 url(../site_files/images/menu_06.jpg);
+	border-right: 2px solid #fff;
+}
+
+

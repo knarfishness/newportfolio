@@ -1,0 +1,196 @@
+html {
+min-height: 100.1%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	/*font: 11px "Lucida Grande", "Arial", "Helvetica", "Verdana", "sans-serif";*/
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	background:url(site_bg.gif);
+	background-repeat:repeat-x;
+	background-color:#000000;
+	background-attachment:fixed;
+	color: #FFFFFF;
+	text-align: center;
+	background-repeat:repeat;
+}
+
+
+
+/*redefine*/
+
+::-moz-selection {
+	background:#333333;
+	color: #fff;
+}
+
+::selection {
+	background: #333333;
+	color: #fff;
+}
+
+h1, h2, h3, h4, p, ul {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	list-style: none;
+}
+
+h1 {
+font-size:18px;
+}
+
+img {
+border:none;
+}
+
+
+/*shared*/
+
+span.clr {
+	display: block;
+	clear: both;
+}
+
+/*content*/
+
+#container {
+	background-color:#FFFFFF;
+	position: relative;
+	/*z-index: 1000;*/
+	width: 800px;
+	padding: 0px 0px 15px 0;
+	/*border-right: 1px solid #1c1c1c;*/
+	margin:auto;
+	margin-bottom:25px;
+	margin-top:20px;
+	text-align: left;
+	border: solid 3px #fff;
+
+}
+
+.title {
+	width: 800px;
+	height: 194px;
+	border:none;
+	border-bottom: 3px solid #fff;
+	padding:0px;
+	
+}
+
+
+.popoutContainer {
+	width: 800px;
+	margin-top:0px;
+	display: none;
+	height: 0px;
+	color:#FFFFFF;
+	border-top: 3px solid #fff;
+	overflow: hidden;
+}
+
+
+.content {
+	background-color:#000000;
+	background-image:url(contentback.jpg);
+	float:left;
+	width: 750px;
+	height: 500px;
+	overflow:hidden;
+	padding:30px;
+	border-right: 3px solid #fff;
+	margin-top:0px;
+}
+
+.content ul {
+list-style:square;
+margin-left:50px;
+}
+
+
+
+a {
+	color: #000000;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ccc;
+	text-decoration: none;
+}
+
+#footer {
+	width: 800px;
+	margin-top: 2px;
+	padding-top:2px;
+	text-align: right;
+	background-color:#FFFFFF;
+}
+
+.left {
+	float: left;
+}
+
+
+.right {
+	float: right;
+}
+
+.center {
+	float:inherit;
+	text-align:center;
+	}
+	
+#images {
+	display:none;
+	overflow:hidden;
+}
+
+#Tips2 {
+	color: #fff;
+}
+
+.tool-tip {
+	color: #fff;
+	width: 200px;
+	z-index: 13000;
+}
+ 
+.tool-title {
+	font-weight: bold;
+	font-size: 11px;
+	text-decoration:underline;
+	margin: 0;
+	color: #9FD4FF;
+	padding: 8px 8px 4px;
+	background: url(bubble.png) top left;
+}
+ 
+.tool-text {
+	font-size: 11px;
+	padding: 4px 8px 10px;
+	background: url(bubble.png) bottom right;
+}
+
+.gallery {
+	width:750px;
+	margin-left: 0 auto;
+    margin-right: 0 auto;
+	margin-top:15px;
+}
+
+.gallery img {
+	border: 1px solid #ccc;
+	padding: 5px 5px 5px 5px;
+	margin: 10px;
+	cursor: pointer;
+}
+
+.contentimage {
+	border: 1px solid #ccc;
+	margin: 5px;
+	padding: 5px;
+	margin-left:20px;
+}
