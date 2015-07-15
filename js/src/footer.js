@@ -1,4 +1,6 @@
 // footer push
-	function footerPush() {
-		$('body').css('margin-bottom', $('.footer').outerHeight());
+	footerPush = function () {
+		if ($('.footer').length) {
+			$('body').css('padding-bottom', $('.footer').outerHeight());
+		};
 	}

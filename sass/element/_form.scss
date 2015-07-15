@@ -1,6 +1,71 @@
+legend {
+	&[class*="col-xx-"] {
+		padding-left: ($grid-gutter / 2);
+	}
+	// 480
+		@include responsive(xs) {
+			&[class*="col-xs-"] {
+				padding-left: ($grid-gutter / 2);
+			}
+		}
+	// 768
+		@include responsive(sm) {
+			&[class*="col-sm-"] {
+				padding-left: ($grid-gutter / 2);
+			}
+		}
+	// 992
+		@include responsive(md) {
+			&[class*="col-md-"] {
+				padding-left: ($grid-gutter / 2);
+			}
+		}
+	// 1440
+		@include responsive(lg) {
+			&[class*="col-lg-"] {
+				padding-left: ($grid-gutter / 2);
+			}
+		}
+}
+
+.checkbox,
+.radio {
+	display: block;
+	position: relative;
+	.form-group & {
+		margin-top: (($input-height - $line-height) / 2);
+		padding-bottom: (($input-height - $line-height) / 2);
+	}
+	label {
+		cursor: pointer;
+		margin: 0;
+		min-height: $font-size;
+		padding-left: $line-height;
+	}
+	&.disabled,
+	fieldset[disabled] & {
+		label {
+			color: $black-hint;
+			cursor: not-allowed;
+		}
+	}
+}
+
+.checkbox input[type="checkbox"],
+.radio input[type="radio"] {
+	margin-left: ($line-height * -1);
+	position: absolute;
+}
+
+.checkbox-inline,
+.radio-inline {
+	display: inline-block;
+	margin-right: $grid-gutter;
+}
+
 .form {
-	margin-top: $line-height;
-	margin-bottom: $line-height;
+	margin-top: $margin-md;
+	margin-bottom: $margin-md;
 }
 
 .form-control {
@@ -15,11 +80,11 @@
 	height: $input-height;
 	line-height: $line-height;
 	padding: (($input-height - $line-height) / 2) 0 (($input-height - $line-height) / 2 - 1);
+	transition: border-bottom-color 0.15s $timing;
 	width: 100%;
 	@include placeholder($black-hint);
-	@include transition(border-bottom-color 0.15s $timing);
 	&:focus {
-		border-bottom-color: $link-color;
+		border-color: $link-color;
 		border-bottom-width: 2px;
 		outline: 0;
 		padding-bottom: (($input-height - $line-height) / 2 - 2);
@@ -27,7 +92,7 @@
 	&[disabled],
 	&[readonly],
 	fieldset[disabled] & {
-		border-bottom-style: dashed;
+		border-style: dashed;
 		color: $black-hint;
 		cursor: not-allowed;
 		opacity: 1;
@@ -37,13 +102,48 @@
 		vertical-align: middle;
 		width: auto;
 	}
-	@each $color in $palette-list {
-		$i: index($palette-list, $color);
-		
-		.form-group-#{$color} & {
-			border-bottom-color: nth($palette-color, $i);
+	&.form-control-default,
+	.form-control-default & {
+		border: 1px solid $black-hint;
+		padding: (($input-height - $line-height) / 2 - 1) ($grid-gutter / 2);
+		transition: none;
+		&:focus {
+			border: 1px solid $link-color;
+			padding: (($input-height - $line-height) / 2 - 1) ($grid-gutter / 2);
+		}
+		&[disabled],
+		&[readonly],
+		fieldset[disabled] & {
+			background-color: $white-bg-dark;
 		}
 	}
+}
+
+// colour
+	@each $color in $palette-list {
+		$i: index($palette-list, $color);
+
+		.form-group-#{$color} {
+			.form-control,
+			.form-control:focus {
+				border-color: nth($palette-color, $i);
+			}
+		}
+	}
+
+input[type="color"].form-control-default,
+.form-control-default input[type="color"] {
+	min-width: ($grid-gutter + $line-height + 2);
+}
+
+label + .form-control.form-control-default,
+.form-control-default label + .form-control {
+	margin-top: ($line-height / 4);
+}
+
+label.access-hide + .form-control.form-control-default,
+.form-control-default label.access-hide + .form-control {
+	margin-top: 0;
 }
 
 select.form-control {
@@ -62,6 +162,19 @@ select.form-control {
 	}
 }
 
+select.form-control-default,
+.form-control-default select {
+	@include responsive("(-webkit-min-device-pixel-ratio: 0)") {
+		background-position: 99% (($input-height - 12) / 2 - 1);
+		background-position: calc(100% - #{$grid-gutter / 2}) (($input-height - 12) / 2 - 1);
+		padding-right: ($grid-gutter * 1.5);
+		&[multiple],
+		&[size] {
+			padding-right: ($grid-gutter / 2);
+		}
+	}
+}
+
 textarea.form-control {
 	height: auto;
 }
@@ -75,152 +188,90 @@ textarea.form-control {
 	border-bottom: 1px solid $black-hint;
 	display: block;
 	font-size: $font-size;
-	font-weight: 400;
+	font-weight: $font-weight-normal;
 	line-height: $line-height;
 	margin-top: 0;
 	margin-bottom: 0;
 	padding-top: (($input-height - $line-height) / 2);
 	padding-bottom: (($input-height - $line-height) / 2 - 1);
+	&.form-control-default {
+		padding-top: (($input-height - $line-height) / 2 - 1);
+	}
 }
 
-// checkbox & radio
-	.checkbox,
-	.radio {
-		display: block;
-		position: relative;
-		.form-group & {
-			margin-top: (($input-height - $line-height) / 2);
-			padding-bottom: (($input-height - $line-height) / 2);
-		}
-		label {
-			cursor: pointer;
-			margin: 0;
-			min-height: $font-size;
-			padding-left: $line-height;
-		}
-		&.disabled,
-		fieldset[disabled] & {
-			label {
-				color: $black-hint;
-				cursor: not-allowed;
-			}
-		}
+.form-group {
+	margin-top: $margin-md;
+	margin-bottom: $margin-md;
+	legend + & {
+		margin-top: 0;
 	}
+}
 
-	.checkbox input[type="checkbox"],
-	.radio input[type="radio"] {
-		margin-left: ($line-height * -1);
-		position: absolute;
-	}
-
-	.checkbox-inline,
-	.radio-inline {
-		display: inline-block;
+.form-group-btn {
+	margin-bottom: $margin-md;
+	.btn {
+		margin-top: $margin-md;
 		margin-right: $grid-gutter;
 	}
-
-// group
-	.form-group {
-		margin-top: $line-height;
-		margin-bottom: $line-height;
-	}
-
-	.form-group-btn {
-		margin-bottom: $line-height;
-		.btn {
-			margin-top: $line-height;
-			margin-right: $grid-gutter;
-		}
-	}
-
-// help
-	.form-help {
-		display: block;
-		font-size: $font-size-h6;
-		font-weight: 400;
-		margin-top: ($line-height / 2);
-		margin-bottom: ($line-height / 2);
-		position: relative;
-	}
-
-	.form-help-icon {
-		position: absolute;
-			top: (($line-height - $font-size-h6) / 2);
-			right: 0;
-	}
-
-	.form-help-msg {
-		padding-right: (18em / 14);
-	}
-
-// label
-	.form-label {
-		display: block;
-		margin-top: ($line-height / 2);
-		@each $color in $palette-list {
-			$i: index($palette-list, $color);
-			
-			.form-group-#{$color} & {
-				color: nth($palette-color, $i);
-			}
-		}
-		// 480
-			@include responsive(xs) {
-				[class*="col-xs"] > & {
-					@include form-label();
-				}
-			}
-		// 768
-			@include responsive(sm) {
-				[class*="col-sm"] > & {
-					@include form-label();
-				}
-			}
-		// 992
-			@include responsive(md) {
-				[class*="col-md"] > & {
-					@include form-label();
-				}
-			}
-		// 1440
-			@include responsive(lg) {
-				[class*="col-lg"] > & {
-					@include form-label();
-				}
-			}
 }
 
-	.label {
-		margin-bottom: ($line-height / 2);
+.form-help {
+	display: block;
+	font-size: $font-size-h6;
+	font-weight: $font-weight-normal;
+	line-height: $line-height;
+	margin-top: $margin-sm;
+	margin-bottom: $margin-sm;
+	position: relative;
+}
+
+.form-help-icon {
+	position: absolute;
+		top: (($line-height - $font-size-h6) / 2);
+		right: 0;
+}
+
+.form-help-msg {
+	padding-right: (18em / 14);
+}
+
+.form-label {
+	display: block;
+	// 480
+		@include responsive(xs) {
+			[class*="col-xs"] > & {
+				@include form-label();
+			}
+		}
+	// 768
+		@include responsive(sm) {
+			[class*="col-sm"] > & {
+				@include form-label();
+			}
+		}
+	// 992
+		@include responsive(md) {
+			[class*="col-md"] > & {
+				@include form-label();
+			}
+		}
+	// 1440
+		@include responsive(lg) {
+			[class*="col-lg"] > & {
+				@include form-label();
+			}
+		}
+}
+
+// colour
+	@each $color in $palette-list {
+		$i: index($palette-list, $color);
+
+		.form-group-#{$color} .form-label {
+			color: nth($palette-color, $i);
+		}
 	}
 
-// legend
-	legend {
-		&[class*="col-xx-"] {
-			padding-left: ($grid-gutter / 2);
-		}
-		// 480
-			@include responsive(xs) {
-				&[class*="col-xs-"] {
-					padding-left: ($grid-gutter / 2);
-				}
-			}
-		// 768
-			@include responsive(sm) {
-				&[class*="col-sm-"] {
-					padding-left: ($grid-gutter / 2);
-				}
-			}
-		// 992
-			@include responsive(md) {
-				&[class*="col-md-"] {
-					padding-left: ($grid-gutter / 2);
-				}
-			}
-		// 1440
-			@include responsive(lg) {
-				&[class*="col-lg-"] {
-					padding-left: ($grid-gutter / 2);
-				}
-			}
-	}
+.label {
+	margin-bottom: $margin-sm;
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport">
 	<title>knarfishness</title>
@@ -15,82 +15,92 @@
 
 	<!-- ie -->
 		<!--[if lt IE 9]>
-			<script src="js/html5shiv.js" type="text/javascript"></script>
-			<script src="js/respond.js" type="text/javascript"></script>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 </head>
-<body>
+<body class="avoid-fout">
+	<div class="avoid-fout-indicator avoid-fout-indicator-fixed">
+		<div class="progress-circular progress-circular-alt progress-circular-center">
+			<div class="progress-circular-wrapper">
+				<div class="progress-circular-inner">
+					<div class="progress-circular-left">
+						<div class="progress-circular-spinner"></div>
+					</div>
+					<div class="progress-circular-gap"></div>
+					<div class="progress-circular-right">
+						<div class="progress-circular-spinner"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<header class="header">
 		<ul class="nav nav-list pull-left">
 			<li>
-				<a class="menu-toggle" href="#menu">
-					<span class="access-hide">Menu</span>
-					<span class="icon icon-menu"></span>
-					<span class="header-close icon icon-close"></span>
+				<a data-toggle="menu" href="#menu">
+					<span class="icon icon-lg">menu</span>
 				</a>
 			</li>
 		</ul>
-		<a class="header-logo" href="index.html">knarfishness</a>
-		<ul class="nav nav-list pull-right">
+		<a class="header-logo" href="/index.html">knarfishness</a>
+		<!-- <ul class="nav nav-list pull-right">
 			<li>
-				<a class="menu-toggle" href="#search">
-					<span class="access-hide">Search</span>
-					<span class="icon icon-search"></span>
-					<span class="header-close icon icon-close"></span>
+				<a data-toggle="menu" href="#profile">
+					<span class="access-hide">John Smith</span>
+					<span class="avatar"><img alt="alt text for John Smith avatar" src="images/users/avatar-001.jpg"></span>
 				</a>
 			</li>
-		</ul>
+		</ul> -->
 	</header>
 	<nav class="menu" id="menu">
 		<div class="menu-scroll">
 			<div class="menu-wrap">
 				<div class="menu-content">
+					<a class="menu-logo" href="/index.html">knarfishness.net</a>
 					<ul class="nav">
 						<li>
-							<a href="home.html">Home</a>
+							<a href="/index.html">Home</a>
 						</li>
 						<li>
-							<a href="about.html">About</a>
+							<a href="/pages/custom/about.html">About</a>
 						</li>
 						<li>
-							<a href="contact.html">Contact</a>
+							<a href="/pages/custom/contact.html">Contact</a>
 						</li>
 						<li>
-							<a href="blog.html">Blog</a>
+							<a href="/pages/custom/resume.html">Resume</a>
 						</li>
 					</ul>
 					<hr>
 					<ul class="nav">
 						<li>
-							<a href="portfolio.html">Portfolio</a>
-							<span class="menu-collapse-toggle collapsed" data-target="#portfolio" data-toggle="collapse">
-								<i class="icon icon-close menu-collapse-toggle-close"></i>
-								<i class="icon icon-add menu-collapse-toggle-default"></i>
-							</span>
-							<ul class="menu-collapse collapse" id="portfolio">
+							<a href="#">Portfolio</a>
+							<span class="menu-collapse-toggle collapsed" data-target="#portfolio-form-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
+							<ul class="menu-collapse collapse" id="portfolio-form-elements">
 								<li>
-									<a href="/portfolio/web.html">Web Development</a>
+									<a href="/pages/custom/webdev.html">Web Development</a>
 								</li>
 								<li>
-									<a href="/portfolio/graphic.html">Graphic Design</a>
+									<a href="/pages/custom/design.html">Graphic Design</a>
 								</li>
 								<li>
-									<a href="/portfolio/photo.html">Photography</a>
+									<a href="/pages/custom/photo.html">Web Development</a>
 								</li>
 							</ul>
 						</li>
 						<li>
-							<a href="projects.html">Projects</a>
-							<span class="menu-collapse-toggle collapsed" data-target="#projects" data-toggle="collapse">
-								<i class="icon icon-close menu-collapse-toggle-close"></i>
-								<i class="icon icon-add menu-collapse-toggle-default"></i>
-							</span>
-							<ul class="menu-collapse collapse" id="projects">
+							<a href="#">Projects</a>
+							<span class="menu-collapse-toggle collapsed" data-target="#project-form-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
+							<ul class="menu-collapse collapse" id="project-form-elements">
 								<li>
-									<a href="/projects/3d-printing">3D Printing</a>
+									<a href="/pages/custom/3dprinting.html">Additive Manufacturing</a>
 								</li>
 								<li>
-									<a href="/projects/home-automation">Home Automation</a>
+									<a href="/pages/custom/robotics.html">Robotics</a>
+								</li>
+								<li>
+									<a href="/pages/custom/automation.html">Home Automation</a>
 								</li>
 							</ul>
 						</li>
@@ -99,21 +109,7 @@
 			</div>
 		</div>
 	</nav>
-	<div class="menu menu-right menu-search" id="search">
-		<div class="menu-scroll">
-			<div class="menu-wrap">
-				<div class="menu-top">
-					<div class="menu-top-info">
-						<form class="menu-top-form">
-							<label class="access-hide" for="menu-search">Search</label>
-							<input class="form-control form-control-inverse menu-search-focus" id="menu-search" placeholder="Search" type="search">
-							<button class="access-hide" type="submit">Search</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<div class="content">
 		<div class="content-heading">
 			<div class="container">
@@ -168,13 +164,13 @@
 								<ul>
 									<li>Agile Planning</li>
 									<li>JIRA / Stash Project Management</li>
-									<li> GIT (& SVN)</li>
+									<li> GIT (&amp; SVN)</li>
 								</ul>
 							</div>
 							<div class="tab-pane fade" id="third-tab">
 								<p>Deployment content.</p>
 								<ul>
-									<li>Apache & nginx Server Configuration</li>
+									<li>Apache &amp; nginx Server Configuration</li>
 									<li>Jenkins CI</li>
 									<li>Puppet deployment of ebuilds</li>
 								</ul>
@@ -188,20 +184,21 @@
 	</div>
 	<footer class="footer">
 		<div class="container">
-			<p>Copyright 2015, Frank Avery</p>
+			<p>Content Copyright 2015 Frank Avery d.b.a. knarfishness.net, design by Daemonite</p>
 		</div>
 	</footer>
 	<div class="fbtn-container">
 		<div class="fbtn-inner">
-			<a class="fbtn fbtn-red" href="https://plus.google.com/+FrankAvery0"><span class="fbtn-text">Add on Google +</span><span class="fa fa-google-plus"></span></a>
-		</div>
-	</div>
-	<div class="fbtn-container">
-		<div class="fbtn-inner">
-			<a class="fbtn fbtn-red" href="https://plus.google.com/+FrankAvery0"><span class="fbtn-text">Add on Google +</span><span class="fa fa-google-plus"></span></a>
+			<a class="fbtn fbtn-red fbtn-lg" data-toggle="dropdown"><span class="fbtn-text">Links</span><span class="fbtn-ori icon">add</span><span class="fbtn-sub icon">close</span></a>
+			<div class="fbtn-dropdown">
+				<a class="fbtn fbtn-blue" href="https://twitter.com/theknarfishness" target="_blank"><span class="fbtn-text">Follow Daemon on Twitter</span><span class="fa fa-twitter"></span></a>
+				<a class="fbtn" href="https://github.com/knarfishness" target="_blank"><span class="fbtn-text">Fork me on GitHub</span><span class="fa fa-github"></span></a>
+				<a class="fbtn fbtn-alt" href="http://www.transposing.us/" target="_blank"><span class="fbtn-text">Visit the blog</span><span class="icon">link</span></a>
+			</div>
 		</div>
 	</div>
 
-	<script src="js/base.min.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/base.min.js"></script>
 </body>
 </html>

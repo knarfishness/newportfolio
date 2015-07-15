@@ -39,15 +39,41 @@ module.exports = function(grunt) {
 			}
 		},
 
+		postcss: {
+			options: {
+				map: false,
+				processors: [
+					require('autoprefixer-core') ({
+						browsers: 'last 4 version'
+					})
+				]
+			},
+			base: {
+				src: 'css/base.css'
+			},
+			project: {
+				src: 'css/project.css'
+			}
+		},
+
 		sass: {
-			all: {
+			base: {
 				files: [{
 					cwd: 'sass/',
 					dest: 'css/',
 					expand: true,
 					ext: '.css',
-					src: ['*.scss']
+					src: ['*.scss', '!project.scss']
 				}],
+				options: {
+					sourcemap: 'none',
+					style: 'expanded'
+				}
+			},
+			project: {
+				files: {
+					'css/project.css': 'sass/project.scss',
+				},
 				options: {
 					sourcemap: 'none',
 					style: 'expanded'
@@ -69,20 +95,32 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
-			jsbase: {
+			base: {
+				files: ['js/src/*.js', 'sass/**/*.scss', '!sass/project.scss'],
+				tasks: ['concat:base', 'uglify:base', 'sass:base', 'postcss:base', 'cssmin:base']
+			},
+			basecss: {
+				files: ['sass/**/*.scss', '!sass/project.scss'],
+				tasks: ['sass:base', 'postcss:base', 'cssmin:base']
+			},
+			basejs: {
 				files: ['js/src/*.js'],
 				tasks: ['concat:base', 'uglify:base']
 			},
-			jsproject: {
+			project: {
+				files: ['js/src-project/*.js', 'sass/project.scss'],
+				tasks: ['concat:project', 'uglify:project', 'sass:project', 'postcss:project', 'cssmin:project']
+			},
+			projectcss: {
+				files: ['sass/project.scss'],
+				tasks: ['sass:project', 'postcss:project', 'cssmin:project']
+			},
+			projectjs: {
 				files: ['js/src-project/*.js'],
 				tasks: ['concat:project', 'uglify:project']
-			},
-			sass: {
-				files: ['sass/**/*.scss'],
-				tasks: ['sass', 'cssmin']
 			}
 		},
-		
+
 		// dev update
 		devUpdate: {
 			main: {

@@ -1,33 +1,62 @@
 .fbtn {
 	background-color: $black-bg;
 	border-radius: 50%;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 	clear: both;
-	color: $white;
+	color: $black-text;
 	cursor: pointer;
 	display: block;
 	font-size: $line-height;
-	padding: ($line-height / 2) 0;
+	height: $fbtn-height;
+	margin: $margin-sm auto;
+	padding: (($fbtn-height - $line-height) / 2) 0;
 	position: relative;
 	text-align: center;
-	width: ($line-height * 2);
-	@include box-shadow(0 3px 10px rgba(0, 0, 0, 0.5));
-	@include transition(all 0.3s $timing);
+	transition: all 0.3s $timing;
+	transition-property: box-shadow, opacity, transform;
+	width: $fbtn-height;
 }
 
 a.fbtn {
 	&:focus,
 	&:hover {
-		color: $white;
-		@include box-shadow(0 3px 10px rgba(0, 0, 0, 0.5), 0 3px 15px rgba(0, 0, 0, 0.5));
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5), 0 3px 15px rgba(0, 0, 0, 0.5);
+		color: $black-text;
 	}
 }
 
+// colour
+	@each $color in $palette-list {
+		$i: index($palette-list, $color);
+
+		.fbtn-#{$color} {
+			background-color: nth($palette-color, $i);
+			color: $white !important;
+		}
+	}
+
+// size
+	.fbtn-lg {
+		height: ($fbtn-height + $base * 2);
+		padding-top: (($fbtn-height + $base * 2 - $line-height) / 2);
+		padding-bottom: (($fbtn-height + $base * 2 - $line-height) / 2);
+		width: ($fbtn-height + $base * 2);
+		.fbtn-sub {
+			// position
+				top: (($fbtn-height + $base * 2 - $line-height) / 2);
+		}
+		~ .fbtn-dropdown {
+			min-width: ($fbtn-height + $base * 2 + $grid-gutter * 2);
+		}
+	}
+
 .fbtn-container {
+	backface-visibility: hidden;
 	position: fixed;
 		right: $grid-gutter;
-		bottom: $line-height;
-	z-index: ($header-base + 1);
-	@include transition(margin-bottom 0.3s $timing, right 0.3s $timing);
+		bottom: $margin-sm;
+	transition: margin-bottom 0.3s $timing, right 0.3s $timing;
+	z-index: ($content-base + 1);
 }
 
 .fbtn-dropdown {
@@ -38,170 +67,140 @@ a.fbtn {
 	position: absolute;
 		right: ($grid-gutter * -1);
 		bottom: 100%;
-	@include transition(max-height 0s 0.5s);
+	transition: max-height 0s 0.5s;
 	.fbtn-inner.open & {
 		max-height: 99999px;
 		overflow: visible;
-		@include transition(max-height 0s);
+		transition: max-height 0s;
 	}
 	.fbtn {
-		margin: ($line-height / 2) auto;
-		@include opacity(0);
-		@include transform(scale(0.5));
+		opacity: 0;
+		transform: scale(0.5, 0.5);
 		&:nth-last-child(1) {
-			-webkit-transition-delay: 300ms;
-			        transition-delay: 300ms;
+			transition-delay: 300ms;
 		}
 		&:nth-last-child(2) {
-			-webkit-transition-delay: 250ms;
-			        transition-delay: 250ms;
+			transition-delay: 250ms;
 		}
 		&:nth-last-child(3) {
-			-webkit-transition-delay: 200ms;
-			        transition-delay: 200ms;
+			transition-delay: 200ms;
 		}
 		&:nth-last-child(4) {
-			-webkit-transition-delay: 150ms;
-			        transition-delay: 150ms;
+			transition-delay: 150ms;
 		}
 		&:nth-last-child(5) {
-			-webkit-transition-delay: 100ms;
-			        transition-delay: 100ms;
+			transition-delay: 100ms;
 		}
 		&:nth-last-child(6) {
-			-webkit-transition-delay: 50ms;
-			        transition-delay: 50ms;
+			transition-delay: 50ms;
 		}
 		.fbtn-inner.open & {
-			@include opacity(1);
-			@include transform(scale(1));
-			-webkit-transition-delay: 300ms;
-			        transition-delay: 300ms;
+			opacity: 1;
+			transform: scale(1, 1);
+			transition-delay: 300ms;
 			&:nth-last-child(1) {
-				-webkit-transition-delay: 0s;
-				        transition-delay: 0s;
+				transition-delay: 0s;
 			}
 			&:nth-last-child(2) {
-				-webkit-transition-delay: 50ms;
-				        transition-delay: 50ms;
+				transition-delay: 50ms;
 			}
 			&:nth-last-child(3) {
-				-webkit-transition-delay: 100ms;
-				        transition-delay: 100ms;
+				transition-delay: 100ms;
 			}
 			&:nth-last-child(4) {
-				-webkit-transition-delay: 150ms;
-				        transition-delay: 150ms;
+				transition-delay: 150ms;
 			}
 			&:nth-last-child(5) {
-				-webkit-transition-delay: 200ms;
-				        transition-delay: 200ms;
+				transition-delay: 200ms;
 			}
 			&:nth-last-child(6) {
-				-webkit-transition-delay: 250ms;
-				        transition-delay: 250ms;
+				transition-delay: 250ms;
 			}
 		}
 	}
 }
 
-// colour
-	@each $color in $palette-list {
-		$i: index($palette-list, $color);
-		
-		.fbtn-#{$color} {
-			background-color: nth($palette-color, $i);
-		}
+.fbtn-ori,
+.fbtn-sub {
+	transition: all 0.3s $timing;
+	transition-property: opacity, transform;
+	&.#{$mdicon-css-prefix} {
+		vertical-align: bottom;
 	}
+}
 
-// size
-	.fbtn-lg {
-		padding: ($line-height * 0.75) 0;
-		width: ($line-height * 2.5);
-		.fbtn-sub {
-			// position
-				top: ($line-height * 0.75);
-		}
-		~ .fbtn-dropdown {
-			min-width: ($grid-gutter * 2 + $line-height * 2.5);
-		}
+.fbtn-ori {
+	.fbtn-inner.open & {
+		opacity: 0;
+		transform: rotate(225deg);
 	}
+}
 
-// text
-	.fbtn-ori,
-	.fbtn-sub {
-		@include transition(all 0.3s $timing);
+.fbtn-rotate {
+	transition: all 0.3s $timing;
+	transition-property: opacity, transform;
+	.fbtn-inner.open & {
+		transform: rotate(225deg);
 	}
+}
 
-	.fbtn-ori {
-		.fbtn-inner.open & {
-			@include opacity(0);
-			@include transform(rotate(225deg));
+.fbtn-sub {
+	opacity: 0;
+	position: absolute;
+		top: (($fbtn-height - $line-height) / 2);
+		left: 0;
+	text-align: center;
+	transform: rotate(-225deg);
+	width: 100%;
+	.fbtn-inner.open & {
+		opacity: 1;
+		transform: rotate(0);
+	}
+}
+
+.fbtn-text {
+	background-color: $black-text;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 2px;
+	color: $white;
+	font-size: $font-size-h6;
+	height: 0;
+	line-height: $line-height;
+	margin-top: ($line-height / -2);
+	margin-right: $grid-gutter;
+	opacity: 0;
+	overflow: hidden;
+	padding-right: ($grid-gutter / 2);
+	padding-left: ($grid-gutter / 2);
+	position: absolute;
+		top: 50%;
+		right: 100%;
+	transition: opacity 0.3s $timing;
+	white-space: nowrap;
+	width: 0;
+	// touch & no touch
+		.no-touch .fbtn:hover & {
+			height: auto;
+			opacity: 1;
+			width: auto;
 		}
-	}
-
-	.fbtn-sub {
-		position: absolute;
-			top: ($line-height / 2);
-			left: 0;
-		text-align: center;
-		width: 100%;
-		@include opacity(0);
-		@include transform(rotate(-225deg));
-		.fbtn-inner.open & {
-			@include opacity(1);
-			@include transform(rotate(0));
+		.no-touch .fbtn-dropdown .fbtn:hover & {
+			height: 0;
+			opacity: 0;
+			width: 0;
 		}
-	}
-
-	.fbtn-rotate {
-		@include transition(all 0.3s $timing);
-		.fbtn-inner.open & {
-			@include transform(rotate(225deg));
+		.no-touch .fbtn-inner.open .fbtn-dropdown .fbtn:hover & {
+			height: auto;
+			opacity: 1;
+			width: auto;
 		}
-	}
-
-	.fbtn-text {
-		background-color: $black-text;
-		background-color: rgba(0, 0, 0, 0.8);
-		border-radius: 2px;
-		font-size: $font-size-h6;
-		height: 0;
-		margin-top: ($line-height / -2);
-		margin-right: $grid-gutter;
-		overflow: hidden;
-		padding-right: ($grid-gutter / 2);
-		padding-left: ($grid-gutter / 2);
-		position: absolute;
-			top: 50%;
-			right: 100%;
-		white-space: nowrap;
-		width: 0;
-		@include opacity(0);
-		@include transition(opacity 0.3s $timing);
-		// touch & no touch
-			.no-touch .fbtn:hover & {
-				height: auto;
-				width: auto;
-				@include opacity(1);
-			}
-			.no-touch .fbtn-dropdown .fbtn:hover & {
-				height: 0;
-				width: 0;
-				@include opacity(0);
-			}
-			.no-touch .fbtn-inner.open .fbtn-dropdown .fbtn:hover & {
-				height: auto;
-				width: auto;
-				@include opacity(1);
-			}
-			.touch & {
-				display: none;
-				height: auto;
-				width: auto;
-				@include opacity(1);
-			}
-			.touch .fbtn-inner.open & {
-				display: block;
-			}
-	}
+		.touch & {
+			display: none;
+			height: auto;
+			opacity: 1;
+			width: auto;
+		}
+		.touch .fbtn-inner.open & {
+			display: block;
+		}
+}

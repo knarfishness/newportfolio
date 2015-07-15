@@ -1,10 +1,12 @@
-// 1. import mixins and variables
-	@import "mixin/css3";
-	@import "mixin/grid";
-	@import "mixin/responsive";
-	@import "mixin/utilities";
+@import "mixin/css3";
+@import "mixin/grid";
+@import "mixin/responsive";
+@import "mixin/utilities";
 
-	@import "variable";
+@import "variable";
+
+// project css
+	
 
 	@font-face {
 	  font-family: 'Krinkes';
@@ -39,4 +41,3 @@
         visibility: hidden;
       }
     }
-

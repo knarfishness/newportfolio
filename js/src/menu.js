@@ -1,71 +1,42 @@
 // menu close
-	$(document).on('click', function(e) {
+	$(document).on('click touchend', function(e) {
 		var $target = $(e.target);
 
-		if ($('body').hasClass('menu-open') && !$target.is('.fbtn-container *, .menu *')) {
+		if ($('.menu.open').length && !$target.is('.fbtn-container *, .menu-scroll *')) {
 			mReset();
-		}
+		};
 	});
 	
-	function mReset() {
-		$('body').removeClass('menu-open');
-		$('.menu-toggle').closest('li.active').removeClass('active');
+	mReset = function () {
+		var $bd = $('body');
+
+		if ($bd.hasClass('nav-drawer-open')) {
+			$bd.removeClass('nav-drawer-open');
+		};
+
+		$('[data-toggle="menu"]').closest('.active').removeClass('active');
 		$('.menu.open').removeClass('open');
 	}
 
 // menu open
-	$(document).on('click', '.menu-toggle', function(e) {
+	$(document).on('click', '[data-toggle="menu"]', function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 
 		var $this = $(this),
-		    $thisLi = $this.closest('li'),
-		    $thisMenu = $($this.attr('href'));
+		    $thisLi = $this.parent(),
+		    $thisMenu = $(getTargetFromTrigger($this));
 
 		if ($thisLi.hasClass('active')) {
-			$('body').removeClass('menu-open');
-			$thisLi.removeClass('active');
-			$thisMenu.removeClass('open');
+			mReset();
 		} else {
-			$('body').addClass('menu-open');
-			$('.menu-toggle').closest('li.active').removeClass('active');
-			$('.menu.open').removeClass('open');
+			mReset();
+
+			if ($thisMenu.hasClass('nav-drawer')) {
+				$('body').addClass('nav-drawer-open');
+			}
+
 			$thisLi.addClass('active');
 			$thisMenu.addClass('open');
-			if ($thisMenu.hasClass('menu-search')) {
-				$('.menu-search-focus').focus();
-			};
 		}
-	});
-
-// menu toggle collapse
-	if ($('.menu-collapse').length) {
-		$('.menu-collapse').each(function(index) {
-			var $this = $(this),
-			    $thisLi = $this.closest('li');
-			if ($this.hasClass('in')) {
-				$thisLi.attr('data-height', $thisLi.height());
-			};
-		});
-	};
-
-	$(document).on('show.bs.collapse', '.menu-collapse', function() {
-		var $this = $(this),
-		    $thisLi = $this.closest('li'),
-		    height,
-		    offset = $thisLi.offset().top - window.pageYOffset,
-		    winHeight = window.innerHeight;
-
-		if ($thisLi.attr('data-height') == null) {
-			$thisLi.attr('data-height', $this.height() + $('> a', $thisLi).outerHeight());
-		};
-
-		height = parseInt($thisLi.attr('data-height'));
-
-		if (height + offset > winHeight) {
-			var $thisMenu = $this.closest('.menu-wrap');
-			$thisMenu.animate({
-				scrollTop: height + offset - winHeight + $thisMenu.scrollTop()
-			}, 300);
-		};
 	});

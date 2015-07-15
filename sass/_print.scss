@@ -58,6 +58,12 @@
 
 	// material
 		.card,
+		.card-img,
+		.card-side {
+			border-radius: 0 !important;
+		}
+
+		.card,
 		.tile {
 			border: 1px solid $black-hint;
 		}
@@ -80,4 +86,34 @@
 			border-bottom: 3px solid $black-text;
 			padding-bottom: ($line-height / 2 - 3);
 		}
+}
+
+.visible-print-block {
+	display: none !important;
+	// print
+		@media print {
+			display: block !important;
+		}
+}
+
+.visible-print-inline {
+	display: none !important;
+	// print
+		@media print {
+			display: inline !important;
+		}
+}
+
+.visible-print-inline-block {
+	display: none !important;
+	// print
+		@media print {
+			display: inline-block !important;
+		}
+}
+
+@media print {
+	.hidden-print {
+		display: none !important;
+	}
 }
