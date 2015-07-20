@@ -2,10 +2,19 @@
   font-family: 'Krinkes';
   src: url("/fonts/krinkes.ttf") format("truetype");
 }
+.content-inner {
+  margin-top: 24px;
+}
+
 .header-logo {
   font-family: 'Krinkes', arial, sans-serif;
-  font-size: 40px;
+  font-size: 2em;
   -webkit-font-smoothing: antialiased;
+}
+
+.heading {
+  font-size: 22px;
+  font-size: 5vw;
 }
 
 .footer p {

@@ -75,7 +75,7 @@
 					<hr>
 					<ul class="nav">
 						<li>
-							<a href="#">Portfolio</a>
+							<a id="portfolio_link" href="#">Portfolio</a>
 							<span class="menu-collapse-toggle collapsed" data-target="#portfolio-form-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
 							<ul class="menu-collapse collapse" id="portfolio-form-elements">
 								<li>
@@ -85,12 +85,12 @@
 									<a href="/pages/custom/design.html">Graphic Design</a>
 								</li>
 								<li>
-									<a href="/pages/custom/photo.html">Web Development</a>
+									<a href="/pages/custom/photo.html">Photography</a>
 								</li>
 							</ul>
 						</li>
 						<li>
-							<a href="#">Projects</a>
+							<a id="projects_link" href="#">Portfolio</a>
 							<span class="menu-collapse-toggle collapsed" data-target="#project-form-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
 							<ul class="menu-collapse collapse" id="project-form-elements">
 								<li>
@@ -111,15 +111,98 @@
 	</nav>
 	
 	<div class="content">
-		<div class="content-heading">
+		<!-- <div class="content-heading">
 			<div class="container">
 				<h1 class="heading">Heading</h1>
 			</div>
-		</div>
+		</div> -->
 		<div class="content-inner">
 			<div class="container">
-				Content
+				
+				<div class="card-wrap">
+					<div class="row">
+						
+
+						<!-- css tutorial -->
+						<div class="col-lg-4 col-sm-6">
+							<div class="card" data-toggle="modal" href="#csstut_modal">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="css tutorial" src="/images/screenshots/csstut_preview.png">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">CSS Tutorial</p>
+										<p>
+											A CSS Tutorial for beginners.<br>
+											PHP Allows for dynamic background switching.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div aria-hidden="true" class="modal fade" id="csstut_modal" role="dialog" tabindex="-1" style="text-align:center;">
+								<div class="modal-dialog modal-big">
+									<div class="modal-content">
+										<div class="modal-heading">
+											<a class="modal-close" data-dismiss="modal">&times;</a>
+											<h2 class="modal-title">CSS Tutorial v1.0</h2>
+										</div>
+										<div class="modal-inner">
+											<img alt="css tutorial" src="/images/screenshots/csstut.png" style="max-width:100%; height:auto;">
+											<p>This was a project done in late 2008 to show how PHP can be used to dynamically change the background of a page.
+										</div>
+										<div class="modal-footer">
+											<p class="text-right"><button class="btn btn-flat btn-alt" data-dismiss="modal" type="button">Close</button></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+
+						<!-- ru comm website -->
+						<div class="col-lg-4 col-sm-6">
+							<div class="card" data-toggle="modal" href="#commsite_modal">
+								<aside class="card-side card-side-img pull-right">
+									<img alt="comm site" src="/images/screenshots/commsite_preview.png">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Departmental Website</p>
+										<p>
+											School of Communications website for Radford University. 
+											Produced during my attendance there in the year 2009.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div aria-hidden="true" class="modal fade" id="commsite_modal" role="dialog" tabindex="-1" style="text-align:center;">
+								<div class="modal-dialog modal-big">
+									<div class="modal-content">
+										<div class="modal-heading">
+											<a class="modal-close" data-dismiss="modal">&times;</a>
+											<h2 class="modal-title">RU Comm Site</h2>
+										</div>
+										<div class="modal-inner">
+											<img alt="css tutorial" src="/images/screenshots/commsite.png" style="max-width:100%; height:auto;">
+											<p>This was a project done in late 2008 to show how PHP can be used to dynamically change the background of a page.
+										</div>
+										<div class="modal-footer">
+											<p class="text-right"><button class="btn btn-flat btn-alt" data-dismiss="modal" type="button">Close</button></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+
+
+
+					</div>
+				</div>
 			</div>	
+
 		</div>
 	</div>
 	<footer class="footer">
@@ -128,6 +211,6 @@
 		</div>
 	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="../../js/base.min.js"></script>
+	<script src="../../js/base.min.js"></script><script src="../../js/project.min.js"></script>
 </body>
 </html>
