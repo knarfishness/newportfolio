@@ -90,7 +90,7 @@
 							</ul>
 						</li>
 						<li>
-							<a id="projects_link" href="#">Portfolio</a>
+							<a id="projects_link" href="#">Projects</a>
 							<span class="menu-collapse-toggle collapsed" data-target="#project-form-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
 							<ul class="menu-collapse collapse" id="project-form-elements">
 								<li>
@@ -118,13 +118,131 @@
 		</div> -->
 		<div class="content-inner">
 			<div class="container">
+				<nav class="tab-nav tab-nav-red">
+					<ul class="nav nav-justified">
+						<li class="active">
+							<a class="waves-effect" data-toggle="tab" href="#first-tab">
+								<i class="fa fa-pencil"></i>
+								Designing
+							</a>
+						</li>
+						<li>
+							<a class="waves-effect" data-toggle="tab" href="#second-tab">
+								<i class="fa fa-desktop"></i>
+								Development
+							</a>
+						</li>
+						<li>
+							<a class="waves-effect" data-toggle="tab" href="#third-tab">
+								<i class="fa fa-server"></i>
+								Deployment
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="tab-content">
+					<div class="tab-pane fade active in" id="first-tab">
+						<p>Design content.</p>
+						<ul>
+							<li>Adobe CS5, Lightroom, Aperture</li>
+							<li>GIMP, Inkscape, other open source tools.</li>
+							<li>HTML5, CSS3</li>
+							<li>jQuery, Prototype, (Angular)</li>
+							<li>Twitter Bootstrap, Google Material Design</li>
+						</ul>
+					</div>
+					<div class="tab-pane fade" id="second-tab">
+						<p>Development content.</p>
+						<ul>
+							<li>Agile Planning</li>
+							<li>JIRA / Stash Project Management</li>
+							<li> GIT (&amp; SVN)</li>
+						</ul>
+					</div>
+					<div class="tab-pane fade" id="third-tab">
+						<p>Deployment content.</p>
+						<ul>
+							<li>Apache &amp; nginx Server Configuration</li>
+							<li>Jenkins CI</li>
+							<li>Puppet deployment of ebuilds</li>
+						</ul>
+					</div>
+				</div>
+				
+				<hr>
 				
 				<div class="card-wrap">
 					<div class="row">
+						<!-- barracuda community -->
+						<div class="col-lg-12 col-sm-6">
+							<div class="card" data-toggle="modal" href="#cudacommunity_modal">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="css tutorial" src="/images/screenshots/cudacommunity_preview.png">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">User Community Frontpages</p>
+										<p>
+											PHP/MySQL frontpages for IPBoard forum software.<br>
+											Included responsive templating, AJAX voting system and internationalization.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div aria-hidden="true" class="modal fade" id="cudacommunity_modal" role="dialog" tabindex="-1" style="text-align:center;">
+								<div class="modal-dialog modal-big">
+									<div class="modal-content">
+										<div class="modal-heading">
+											<a class="modal-close" data-dismiss="modal">&times;</a>
+										</div>
+										<div class="modal-inner">
+											<img alt="css tutorial" src="/images/screenshots/cudacommunity.png" style="max-width:100%; height:auto;">
+										</div>
+										<div class="modal-footer">
+											<p class="text-right"><button class="btn btn-flat btn-alt" data-dismiss="modal" type="button">Close</button></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
 						
 
+						<!-- ru comm website -->
+						<div class="col-lg-12 col-sm-6">
+							<div class="card" data-toggle="modal" href="#commsite_modal">
+								<aside class="card-side card-side-img pull-right">
+									<img alt="comm site" src="/images/screenshots/commsite_preview.png">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Departmental Website</p>
+										<p>
+											School of Communications website for Radford University. 
+											Produced and used during my attendance there in the year 2009.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div aria-hidden="true" class="modal fade" id="commsite_modal" role="dialog" tabindex="-1" style="text-align:center;">
+								<div class="modal-dialog modal-big">
+									<div class="modal-content">
+										<div class="modal-heading">
+											<a class="modal-close" data-dismiss="modal">&times;</a>
+										</div>
+										<div class="modal-inner">
+											<img alt="css tutorial" src="/images/screenshots/commsite.png" style="max-width:100%; height:auto;">
+										</div>
+										<div class="modal-footer">
+											<p class="text-right"><button class="btn btn-flat btn-alt" data-dismiss="modal" type="button">Close</button></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
 						<!-- css tutorial -->
-						<div class="col-lg-4 col-sm-6">
+						<div class="col-lg-12 col-sm-6">
 							<div class="card" data-toggle="modal" href="#csstut_modal">
 								<aside class="card-side card-side-img pull-left">
 									<img alt="css tutorial" src="/images/screenshots/csstut_preview.png">
@@ -144,11 +262,9 @@
 									<div class="modal-content">
 										<div class="modal-heading">
 											<a class="modal-close" data-dismiss="modal">&times;</a>
-											<h2 class="modal-title">CSS Tutorial v1.0</h2>
 										</div>
 										<div class="modal-inner">
 											<img alt="css tutorial" src="/images/screenshots/csstut.png" style="max-width:100%; height:auto;">
-											<p>This was a project done in late 2008 to show how PHP can be used to dynamically change the background of a page.
 										</div>
 										<div class="modal-footer">
 											<p class="text-right"><button class="btn btn-flat btn-alt" data-dismiss="modal" type="button">Close</button></p>
@@ -158,33 +274,30 @@
 							</div>
 						</div>
 						
-
-						<!-- ru comm website -->
-						<div class="col-lg-4 col-sm-6">
-							<div class="card" data-toggle="modal" href="#commsite_modal">
+						<!-- horseshoe -->
+						<div class="col-lg-12 col-sm-6">
+							<div class="card" data-toggle="modal" href="#horseshoe_modal">
 								<aside class="card-side card-side-img pull-right">
-									<img alt="comm site" src="/images/screenshots/commsite_preview.png">
+									<img alt="comm site" src="/images/screenshots/horseshoe_preview.png">
 								</aside>
 								<div class="card-main">
 									<div class="card-inner">
-										<p class="card-heading">Departmental Website</p>
+										<p class="card-heading">Horseshoe Farm, VA</p>
 										<p>
-											School of Communications website for Radford University. 
-											Produced during my attendance there in the year 2009.
+											Made from scratch template with photo gallery functionality for a horse boarding facility. 
+											Designed, developed and implemented in a single Saturday in 2009.
 										</p>
 									</div>
 								</div>
 							</div>
-							<div aria-hidden="true" class="modal fade" id="commsite_modal" role="dialog" tabindex="-1" style="text-align:center;">
+							<div aria-hidden="true" class="modal fade" id="horseshoe_modal" role="dialog" tabindex="-1" style="text-align:center;">
 								<div class="modal-dialog modal-big">
 									<div class="modal-content">
 										<div class="modal-heading">
 											<a class="modal-close" data-dismiss="modal">&times;</a>
-											<h2 class="modal-title">RU Comm Site</h2>
 										</div>
 										<div class="modal-inner">
-											<img alt="css tutorial" src="/images/screenshots/commsite.png" style="max-width:100%; height:auto;">
-											<p>This was a project done in late 2008 to show how PHP can be used to dynamically change the background of a page.
+											<img alt="css tutorial" src="/images/screenshots/horseshoe.png" style="max-width:100%; height:auto;">
 										</div>
 										<div class="modal-footer">
 											<p class="text-right"><button class="btn btn-flat btn-alt" data-dismiss="modal" type="button">Close</button></p>
@@ -193,8 +306,137 @@
 								</div>
 							</div>
 						</div>
+						
+						<!-- kn6 -->
+						<div class="col-lg-12 col-sm-6">
+							<div class="card" data-toggle="modal" href="#kn6_modal">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="css tutorial" src="/images/screenshots/kn6_preview.png">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Personal Website, v6</p>
+										<p>
+											Personal portfolio page for the years of 2009-2014.<br>
+											Included jQuery based animations, and an all-in-one file design for easy updates.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div aria-hidden="true" class="modal fade" id="kn6_modal" role="dialog" tabindex="-1" style="text-align:center;">
+								<div class="modal-dialog modal-big">
+									<div class="modal-content">
+										<div class="modal-heading">
+											<a class="modal-close" data-dismiss="modal">&times;</a>
+										</div>
+										<div class="modal-inner">
+											<img alt="css tutorial" src="/images/screenshots/kn6.png" style="max-width:100%; height:auto;">
+										</div>
+										<div class="modal-footer">
+											<p class="text-right"><button class="btn btn-flat btn-alt" data-dismiss="modal" type="button">Close</button></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						
+						<!-- kn4 -->
+						<div class="col-lg-12 col-sm-6">
+							<div class="card" data-toggle="modal" href="#kn4_modal">
+								<aside class="card-side card-side-img pull-right">
+									<img alt="css tutorial" src="/images/screenshots/kn4_preview.png">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Personal Website, v4</p>
+										<p>
+											Personal portfolio page for the years of 2008-2009.<br>
 
+										</p>
+									</div>
+								</div>
+							</div>
+							<div aria-hidden="true" class="modal fade" id="kn4_modal" role="dialog" tabindex="-1" style="text-align:center;">
+								<div class="modal-dialog modal-big">
+									<div class="modal-content">
+										<div class="modal-heading">
+											<a class="modal-close" data-dismiss="modal">&times;</a>
+										</div>
+										<div class="modal-inner">
+											<img alt="css tutorial" src="/images/screenshots/kn4.jpg" style="max-width:100%; height:auto;">
+										</div>
+										<div class="modal-footer">
+											<p class="text-right"><button class="btn btn-flat btn-alt" data-dismiss="modal" type="button">Close</button></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- kn3 -->
+						<div class="col-lg-12 col-sm-6">
+							<div class="card" data-toggle="modal" href="#kn6_modal">
+								<aside class="card-side card-side-img pull-left">
+									<img alt="css tutorial" src="/images/screenshots/kn3_preview.png">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Personal Website, v3</p>
+										<p>
+											Personal portfolio page for the years of 2006-2008.<br>
 
+										</p>
+									</div>
+								</div>
+							</div>
+							<div aria-hidden="true" class="modal fade" id="kn3_modal" role="dialog" tabindex="-1" style="text-align:center;">
+								<div class="modal-dialog modal-big">
+									<div class="modal-content">
+										<div class="modal-heading">
+											<a class="modal-close" data-dismiss="modal">&times;</a>
+										</div>
+										<div class="modal-inner">
+											<img alt="css tutorial" src="/images/screenshots/kn3.jpg" style="max-width:100%; height:auto;">
+										</div>
+										<div class="modal-footer">
+											<p class="text-right"><button class="btn btn-flat btn-alt" data-dismiss="modal" type="button">Close</button></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- kn2.5 -->
+						<div class="col-lg-12 col-sm-6">
+							<div class="card" data-toggle="modal" href="#kn4_modal">
+								<aside class="card-side card-side-img pull-right">
+									<img alt="css tutorial" src="/images/screenshots/kn2_preview.png">
+								</aside>
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Personal Website, v2</p>
+										<p>
+											Personal portfolio page for the years of 2005-2006.<br>
+
+										</p>
+									</div>
+								</div>
+							</div>
+							<div aria-hidden="true" class="modal fade" id="kn2_modal" role="dialog" tabindex="-1" style="text-align:center;">
+								<div class="modal-dialog modal-big">
+									<div class="modal-content">
+										<div class="modal-heading">
+											<a class="modal-close" data-dismiss="modal">&times;</a>
+										</div>
+										<div class="modal-inner">
+											<img alt="css tutorial" src="/images/screenshots/kn2.jpg" style="max-width:100%; height:auto;">
+										</div>
+										<div class="modal-footer">
+											<p class="text-right"><button class="btn btn-flat btn-alt" data-dismiss="modal" type="button">Close</button></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
 
 
