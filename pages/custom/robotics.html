@@ -9,6 +9,8 @@
 	<!-- css -->
 	<link href="../../css/base.min.css" rel="stylesheet">
 	<link href="../../css/project.min.css" rel="stylesheet">
+	<link href="../../css/justifiedGallery.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/css/lightbox.min.css" rel="stylesheet">
 
 	<!-- favicon -->
 	<!-- ... -->
@@ -94,14 +96,14 @@
 							<span class="menu-collapse-toggle collapsed" data-target="#project-form-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
 							<ul class="menu-collapse collapse" id="project-form-elements">
 								<li>
-									<a href="/pages/custom/3dprinting.html">Additive Manufacturing</a>
+									<a href="/pages/custom/3dprinting.html">3D Printing</a>
 								</li>
 								<li>
 									<a href="/pages/custom/robotics.html">Robotics</a>
 								</li>
-								<li>
+								<!-- <li>
 									<a href="/pages/custom/automation.html">Home Automation</a>
-								</li>
+								</li> -->
 							</ul>
 						</li>
 					</ul>
@@ -113,16 +115,56 @@
 	<div class="content">
 		<div class="content-inner">
 			<div class="container">
-				Content
+				<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
+						<b>Robotics Gallery</b><hr>
+						<div id="robots_gallery">
+						    
+							<a data-lightbox="gallery" data-title="Ratchet: Prusa Mendel based 3D printer (gen1)" href="/site_files/portfolio/robots/ratchet.jpg">
+						        <img alt="Ratchet" src="/site_files/portfolio/robots/ratchet.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Tobeca: Portable Briefcase 3D printer designed in France" href="/site_files/portfolio/robots/tobeca.jpg">
+						        <img alt="Tobeca" src="/site_files/portfolio/robots/tobeca.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Capt. Planet: A third generation 3D printer" href="/site_files/portfolio/robots/captplanet.jpg">
+						        <img alt="Capt. Planet" src="/site_files/portfolio/robots/captplanet.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Morgan Freeman: SCARA arm 3D printer designed in South Africa" href="/site_files/portfolio/robots/morgan.jpg">
+						        <img alt="Morgan Freeman" src="/site_files/portfolio/robots/morgan.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Eggbot: A sphere printer created from 3D printed parts" href="/site_files/portfolio/robots/eggbot.jpg">
+						        <img alt="Eggbot" src="/site_files/portfolio/robots/eggbot.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Wunobot: The wandering Arduino Uno robot" href="/site_files/portfolio/robots/wunobot.jpg">
+						        <img alt="Wunobot" src="/site_files/portfolio/robots/wunobot.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="DPR Booth at Detroit Maker Faire" href="/site_files/portfolio/robots/dprbooth.jpg">
+						        <img alt="DPR Booth" src="/site_files/portfolio/robots/dprbooth.jpg" />
+						    </a>
+
+
+							
+						</div>
+					</div>
+				</div>
 			</div>	
 		</div>
 	</div>
 	<footer class="footer">
 		<div class="container">
-			<p>Content Copyright 2015 Frank Avery d.b.a. knarfishness.net, design by Daemonite</p>
+			<p>Content Copyright 2015 Frank Avery d.b.a. knarfishness.net.</p>
 		</div>
 	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="../../js/base.min.js"></script><script src="../../js/project.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/js/lightbox.min.js"></script>
+	<script src="/js/jquery.justifiedGallery.min.js"></script>
+	<script type="text/javascript"> 
+		$('#robots_gallery').justifiedGallery({
+		    rowHeight : 200,
+		    margins : 5,
+			border : -1,
+			lastRow : "justify"
+		});
+	</script>
 </body>
 </html>

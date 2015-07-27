@@ -9,6 +9,8 @@
 	<!-- css -->
 	<link href="../../css/base.min.css" rel="stylesheet">
 	<link href="../../css/project.min.css" rel="stylesheet">
+	<link href="../../css/justifiedGallery.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/css/lightbox.min.css" rel="stylesheet">
 
 	<!-- favicon -->
 	<!-- ... -->
@@ -94,14 +96,14 @@
 							<span class="menu-collapse-toggle collapsed" data-target="#project-form-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
 							<ul class="menu-collapse collapse" id="project-form-elements">
 								<li>
-									<a href="/pages/custom/3dprinting.html">Additive Manufacturing</a>
+									<a href="/pages/custom/3dprinting.html">3D Printing</a>
 								</li>
 								<li>
 									<a href="/pages/custom/robotics.html">Robotics</a>
 								</li>
-								<li>
+								<!-- <li>
 									<a href="/pages/custom/automation.html">Home Automation</a>
-								</li>
+								</li> -->
 							</ul>
 						</li>
 					</ul>
@@ -111,23 +113,83 @@
 	</nav>
 	
 	<div class="content">
-		<div class="content-heading">
-			<div class="container">
-				<h1 class="heading">Heading</h1>
-			</div>
-		</div>
 		<div class="content-inner">
 			<div class="container">
-				Content
+				<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
+						<b>3D Printing Gallery</b><hr>
+						<div id="print_gallery">
+							<a data-lightbox="gallery" data-title="Robot" href="/site_files/portfolio/prints/1robot.jpg">
+						        <img alt="Robot" src="/site_files/portfolio/prints/1robot.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Cube" href="/site_files/portfolio/prints/cube.jpg">
+						        <img alt="Cube" src="/site_files/portfolio/prints/cube.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Dalek" href="/site_files/portfolio/prints/dalek.jpg">
+						        <img alt="Dalek" src="/site_files/portfolio/prints/dalek.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Desk Set" href="/site_files/portfolio/prints/deskset.jpg">
+						        <img alt="Desk Set" src="/site_files/portfolio/prints/deskset.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Fallout 10mm Pistol" href="/site_files/portfolio/prints/fallout10mm.jpg">
+						        <img alt="Fallout 10mm Pistol" src="/site_files/portfolio/prints/fallout10mm.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Flower in Vase" href="/site_files/portfolio/prints/flowerpot.jpg">
+						        <img alt="Flower in Vase" src="/site_files/portfolio/prints/flowerpot.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Frog" href="/site_files/portfolio/prints/frog.jpg">
+						        <img alt="Frog" src="/site_files/portfolio/prints/frog.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Well Guarded" href="/site_files/portfolio/prints/guarded.png">
+						        <img alt="Well Guarded" src="/site_files/portfolio/prints/guarded.png" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Custom Hooks" href="/site_files/portfolio/prints/hooks.jpg">
+						        <img alt="Custom Hooks" src="/site_files/portfolio/prints/hooks.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Functional Key" href="/site_files/portfolio/prints/key.jpg">
+						        <img alt="Functional Key" src="/site_files/portfolio/prints/key.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Customizable LCD Enclousure" href="/site_files/portfolio/prints/lcdbox.jpg">
+						        <img alt="Customizable LCD Enclousure" src="/site_files/portfolio/prints/lcdbox.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Mechanum Wheel" href="/site_files/portfolio/prints/mechanum.jpg">
+						        <img alt="Mechanum Wheel" src="/site_files/portfolio/prints/mechanum.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Morgan Printer Kit" href="/site_files/portfolio/prints/morgankit.jpg">
+						        <img alt="Morgan Printer Kit" src="/site_files/portfolio/prints/morgankit.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Owl" href="/site_files/portfolio/prints/owl.jpg">
+						        <img alt="Owl" src="/site_files/portfolio/prints/owl.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Rose" href="/site_files/portfolio/prints/rose.jpg">
+						        <img alt="Rose" src="/site_files/portfolio/prints/rose.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Tank" href="/site_files/portfolio/prints/tank.jpg">
+						        <img alt="Tank" src="/site_files/portfolio/prints/tank.jpg" />
+						    </a>
+						    <a data-lightbox="gallery" data-title="Pulley wheel with scale" href="/site_files/portfolio/prints/wheel.jpg">
+						        <img alt="Pulley wheel with scale" src="/site_files/portfolio/prints/wheel.jpg" />
+						    </a>
+						</div>
+				</div>		    
 			</div>	
 		</div>
 	</div>
 	<footer class="footer">
 		<div class="container">
-			<p>Content Copyright 2015 Frank Avery d.b.a. knarfishness.net, design by Daemonite</p>
+			<p>Content Copyright 2015 Frank Avery d.b.a. knarfishness.net.</p>
 		</div>
 	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="../../js/base.min.js"></script><script src="../../js/project.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/js/lightbox.min.js"></script>
+	<script src="/js/jquery.justifiedGallery.min.js"></script>
+	<script type="text/javascript"> 
+		$('#print_gallery').justifiedGallery({
+		    rowHeight : 100,
+		    margins : 5,
+			border : -1,
+			lastRow : "justify"
+		});
+	</script>
 </body>
 </html>

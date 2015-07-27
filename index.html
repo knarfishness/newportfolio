@@ -94,14 +94,14 @@
 							<span class="menu-collapse-toggle collapsed" data-target="#project-form-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
 							<ul class="menu-collapse collapse" id="project-form-elements">
 								<li>
-									<a href="/pages/custom/3dprinting.html">Additive Manufacturing</a>
+									<a href="/pages/custom/3dprinting.html">3D Printing</a>
 								</li>
 								<li>
 									<a href="/pages/custom/robotics.html">Robotics</a>
 								</li>
-								<li>
+								<!-- <li>
 									<a href="/pages/custom/automation.html">Home Automation</a>
-								</li>
+								</li> -->
 							</ul>
 						</li>
 					</ul>
@@ -111,11 +111,7 @@
 	</nav>
 	
 	<div class="content">
-	 	<div class="content-heading">
-			<div class="container">
-				<div class="header-index"></div>
-			</div>
-		</div> 
+
 		<div class="content-inner">
 			<div class="container">
 				<div class="row">
@@ -134,6 +130,58 @@
 						
 						<p>- knarfishness</p>
 						<!-- more content goes here -->
+						
+						<hr />
+						<nav class="tab-nav tab-nav-red">
+							<ul class="nav nav-justified">
+								<li class="active">
+									<a class="waves-effect" data-toggle="tab" href="#first-tab">
+										<i class="fa fa-pencil"></i>
+										Design
+									</a>
+								</li>
+								<li>
+									<a class="waves-effect" data-toggle="tab" href="#second-tab">
+										<i class="fa fa-desktop"></i>
+										Develop
+									</a>
+								</li>
+								<li>
+									<a class="waves-effect" data-toggle="tab" href="#third-tab">
+										<i class="fa fa-server"></i>
+										Deploy
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="tab-content">
+							<div class="tab-pane fade active in" id="first-tab">
+								<p>Design content.</p>
+								<ul>
+									<li>Adobe CS5, Lightroom, Aperture</li>
+									<li>GIMP, Inkscape, other open source tools.</li>
+									<li>HTML5, CSS3</li>
+									<li>jQuery, Prototype, (Angular)</li>
+									<li>Twitter Bootstrap, Google Material Design</li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" id="second-tab">
+								<p>Development content.</p>
+								<ul>
+									<li>Agile Planning</li>
+									<li>JIRA / Stash Project Management</li>
+									<li> GIT (&amp; SVN)</li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" id="third-tab">
+								<p>Deployment content.</p>
+								<ul>
+									<li>Apache &amp; nginx Server Configuration</li>
+									<li>Jenkins CI</li>
+									<li>Puppet deployment of ebuilds</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -141,7 +189,7 @@
 	</div>
 	<footer class="footer">
 		<div class="container">
-			<p>Content Copyright 2015 Frank Avery d.b.a. knarfishness.net, design framework by Daemonite</p>
+			<p>Content Copyright 2015 Frank Avery d.b.a. knarfishness.net.</p>
 		</div>
 	</footer>
 	<div class="fbtn-container">

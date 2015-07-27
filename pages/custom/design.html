@@ -9,6 +9,8 @@
 	<!-- css -->
 	<link href="../../css/base.min.css" rel="stylesheet">
 	<link href="../../css/project.min.css" rel="stylesheet">
+	<link href="../../css/justifiedGallery.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/css/lightbox.min.css" rel="stylesheet">
 
 	<!-- favicon -->
 	<!-- ... -->
@@ -86,14 +88,14 @@
 							<span class="menu-collapse-toggle collapsed" data-target="#project-form-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
 							<ul class="menu-collapse collapse" id="project-form-elements">
 								<li>
-									<a href="/pages/custom/3dprinting.html">Additive Manufacturing</a>
+									<a href="/pages/custom/3dprinting.html">3D Printing</a>
 								</li>
 								<li>
 									<a href="/pages/custom/robotics.html">Robotics</a>
 								</li>
-								<li>
+								<!-- <li>
 									<a href="/pages/custom/automation.html">Home Automation</a>
-								</li>
+								</li> -->
 							</ul>
 						</li>
 					</ul>
@@ -103,27 +105,60 @@
 	</nav>
 	
 	<div class="content">
-		<div class="content-heading">
-			<div class="container">
-				<h1 class="heading">Heading</h1>
-			</div>
-		</div>
+
 		<div class="content-inner">
 			<div class="container">
+				<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
+						<b>Graphic Design Gallery</b><hr>
+						<div id="graphic_gallery">
+						    
+							<a data-lightbox="gallery" data-title="Pink Floyd Text Layout 2" href="/site_files/portfolio/graphic/floyd layouts2.jpg">
+						        <img alt="Pink Floyd Text Layout 2" src="/site_files/portfolio/graphic/floyd layouts2.jpg" />
+						    </a>
+							<a data-lightbox="gallery" data-title="Boating Magazine Layout" href="/site_files/portfolio/graphic/boatlayout.jpg">
+						        <img alt="Boating Magazine Layout" src="/site_files/portfolio/graphic/boatlayout.jpg" />
+						    </a>
+							<a data-lightbox="gallery" data-title="Text Tonality Stairway" href="/site_files/portfolio/graphic/stairwayfinished.jpg">
+						        <img alt="Text Tonality Stairway" src="/site_files/portfolio/graphic/stairwayfinished.jpg" />
+						    </a>
+							<a data-lightbox="gallery" data-title="Tag" href="/site_files/portfolio/graphic/tag.jpg">
+						        <img alt="Tag" src="/site_files/portfolio/graphic/tag.jpg" />
+						    </a>
+							<a data-lightbox="gallery" data-title="Pink Floyd Text Layout 1" href="/site_files/portfolio/graphic/floyd layouts.jpg">
+						        <img alt="Pink Floyd Text Layout 1" src="/site_files/portfolio/graphic/floyd layouts.jpg" />
+						    </a>
+							<a data-lightbox="gallery" data-title="Magazine Layout" href="/site_files/portfolio/graphic/maglayout.jpg">
+						        <img alt="Magazine Layout" src="/site_files/portfolio/graphic/maglayout.jpg" />
+						    </a>
+							<a data-lightbox="gallery" data-title="Massage Article Layout" href="/site_files/portfolio/graphic/massagelayout.jpg">
+						        <img alt="Massage Article Layout" src="/site_files/portfolio/graphic/massagelayout.jpg" />
+						    </a>
+							<!--<a data-lightbox="gallery" data-title="Wood Limes Article Layout" href="/site_files/portfolio/graphic/woodandlimeslayout.jpg">
+						        <img alt="Wood Limes Article Layout" src="/site_files/portfolio/graphic/woodandlimeslayout.jpg" />
+						    </a>-->
+							
+						</div>
+					</div>
+				</div>
 			</div>
-
-			
-
-
-
 		</div>
 	</div>
 	<footer class="footer">
 		<div class="container">
-			<p>Content Copyright 2015 Frank Avery d.b.a. knarfishness.net, design by Daemonite</p>
+			<p>Content Copyright 2015 Frank Avery d.b.a. knarfishness.net.</p>
 		</div>
 	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="../../js/base.min.js"></script><script src="../../js/project.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/js/lightbox.min.js"></script>
+	<script src="/js/jquery.justifiedGallery.min.js"></script>
+	<script type="text/javascript"> 
+		$('#graphic_gallery').justifiedGallery({
+		    rowHeight : 200,
+		    margins : 5,
+			border : -1,
+			lastRow : "justify"
+		});
+	</script>
 </body>
 </html>
